@@ -1,0 +1,2 @@
+/usr/lib/adaptation-xiaomi-marble/sources.list.d/community-xiaomi-marble.list /etc/apt/sources.list.d/community-xiaomi-marble.list
+/usr/lib/adaptation-xiaomi-marble/trusted.gpg.d/community-xiaomi-marble.gpg /etc/apt/trusted.gpg.d/community-xiaomi-marble.gpg

@@ -1,0 +1,10 @@
+[Unit]
+Description=xiaomi-marble startup service
+Before=lxc@android.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/adaptation-xiaomi-marble/startup.sh
+
+[Install]
+WantedBy=multi-user.target

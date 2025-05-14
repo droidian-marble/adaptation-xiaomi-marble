@@ -1,0 +1,26 @@
+Source: adaptation-xiaomi-marble
+Maintainer: Halhadus <eneshakans45@proton.me>
+Section: metapackages
+Priority: optional
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.5.0.3
+Vcs-Browser: https://github.com/droidian-marble/adaptation-xiaomi-marble
+Vcs-Git: https://github.com/droidian-marble/adaptation-xiaomi-marble.git
+
+Package: adaptation-xiaomi-marble
+Architecture: all
+Depends: ${misc:Depends},
+         adaptation-xiaomi-marble-configs,
+         adaptation-xiaomi-marble-android,
+Description: adapatation-xiaomi-marble- meta
+ marble api32 adaptation metapackage
+
+Package: adaptation-xiaomi-marble-configs
+Architecture: all
+Depends: ${misc:Depends},
+Description: marble's specific adaptation configs
+
+Package: adaptation-xiaomi-marble-android
+Architecture: all
+Depends: ${misc:Depends},
+Description: marble's specific adaptation for Android. This will disable many Android binaries, remove me if something breaks.

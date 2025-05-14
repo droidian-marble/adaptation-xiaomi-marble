@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+  configure)
+    for gid in 1018 2901 2902 2903 2904 2905 2906 2907 2908 2909 9997; do
+      group="android_oem_$gid"
+      [ "$gid" = "9997" ] && group="android_everybody"
+      [ "$gid" = "1018" ] && group="android_usb"
+      getent group $group >/dev/null || groupadd --gid $gid $group
+    done
+
+    if ! getent passwd usb >/dev/null; then
+      useradd -u 1018 -g 1018 -s /bin/true usb
+    fi
+
+    usermod -aG tty,disk,kmem,dialout,plugdev,systemd-journal,systemd-network,input,kvm,render,netdev,bluetooth,pulse,pulse-access,system,radio,android_bluetooth,android_graphics,android_input,android_audio,android_camera,android_log,android_compass,android_wifi,android_media,android_sdcard_rw,android_vpn,android_usb,android_gps,android_media_rw,android_mtp,android_drmrpc,android_everybody,android_nfc,android_sdcard_r,android_mediadrm,android_debuggerd,android_cache,android_net_bt_admin,android_net_bt,android_inet,android_inet_raw,android_inet_admin,android_readproc,android_wakelock,android_uhid,android_misc,android_oem_2901,android_oem_2902,android_oem_2903,android_oem_2904,android_oem_2905,android_oem_2906,android_oem_2907,android_oem_2908,android_oem_2909 droidian
+
+    systemctl mask serial-getty@hvc0.service
+    systemctl mask droidian-fpd
+    ;;
+  *)
+    echo "Unknown argument: $1" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
