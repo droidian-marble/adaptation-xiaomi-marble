@@ -1,6 +1,6 @@
 [Unit]
 Description=xiaomi-marble startup service
-Before=lxc@android.service
+Before=android-mount.service
 
 [Service]
 Type=oneshot
