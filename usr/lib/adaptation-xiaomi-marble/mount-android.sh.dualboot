@@ -49,9 +49,10 @@ if [ -n "${BIND_MOUNT_PATH}" ] && ! mountpoint -q -- "${BIND_MOUNT_PATH}"; then
     done
 fi
 
-if [ -e "/dev/disk/by-partlabel/super" ]; then
+if [ -e "/userdata/super.img" ]; then
     echo "mapping super partition"
-    dmsetup create --concise "$(parse-android-dynparts /dev/disk/by-partlabel/super)"
+    losetup -r /dev/loop60 /userdata/super.img
+    dmsetup create --concise "$(parse-android-dynparts /dev/loop60)"
 fi
 
 if [ ! -e "/vendor/build.prop" ]; then
