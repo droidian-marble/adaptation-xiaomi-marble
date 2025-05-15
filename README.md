@@ -19,7 +19,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Proximity: ✔
 
-* Vibration ✔
+* Vibration ?
 
 ### Cellular:
 
@@ -86,7 +86,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 ## Links:
 Support Group: https://t.me/linuxonmarble
 
-Kernel: https://github.com/android_kernel_xiaomi_marble
+Kernel: https://github.com/droidian-marble/linux-droidiam-marble
 
 Organization link: https://github.com/droidian-marble
 
