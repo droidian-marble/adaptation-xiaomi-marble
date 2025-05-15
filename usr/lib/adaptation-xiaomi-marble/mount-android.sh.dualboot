@@ -93,17 +93,6 @@ if [ ! -e "/vendor_dlkm/etc/build.prop" ]; then
     done
 fi
 
-sys_vendor="/sys/firmware/devicetree/base/firmware/android/fstab/vendor"
-if [ -e $sys_vendor ] && ! mountpoint -q -- /vendor; then
-    label=$(cat $sys_vendor/dev | awk -F/ '{print $NF}')
-    path=$(find_partition_path $label)
-    [ ! -e "$path" ] && echo "Error vendor not found" && exit
-    type=$(cat $sys_vendor/type)
-    options=$(parse_mount_flags $(cat $sys_vendor/mnt_flags))
-    echo "mounting $path as /vendor"
-    mount $path /vendor -t $type -o $options
-fi
-
 if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor/build.prop 2>/dev/null; then
     if [ -e "/userdata/vendor.img" ]; then
         mount /userdata/vendor.img -o ro /vendor
