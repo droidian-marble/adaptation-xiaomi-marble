@@ -30,19 +30,12 @@ jobs:
           apt update
           
       - name: Install dependencies for cross-build
-        run: apt install -y --allow-downgrades libarchive-tools curl devscripts equivs crossbuild-essential-arm64
+        run: apt install -y --allow-downgrades devscripts equivs crossbuild-essential-arm64
 
       - name: Install dependencies for package build
         run: |
           mk-build-deps --host-arch arm64 --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
           rm adaptation-xiaomi-marble*.deb
-
-      - name: Download latest kernel modules
-        run: |
-          mkdir -p /tmp/modules
-          curl -L "https://github.com/droidian-marble/linux-droidian-marble-modules/releases/download/latest-modules/melt-modules.zip" | bsdtar -xvf- -C /tmp/modules
-          mkdir -p usr/lib/adaptation-xiaomi-marble/modules/
-          mv /tmp/modules/vendor_dlkm_modules/*.ko usr/lib/adaptation-xiaomi-marble/modules/
           
       - name: Build package
         run: |
