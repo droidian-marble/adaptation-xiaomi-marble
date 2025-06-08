@@ -30,7 +30,7 @@ jobs:
           apt update
           
       - name: Install dependencies for cross-build
-        run: apt install -y --allow-downgrades libarchive-tools unzip devscripts equivs crossbuild-essential-arm64
+        run: apt install -y --allow-downgrades libarchive-tools curl devscripts equivs crossbuild-essential-arm64
 
       - name: Install dependencies for package build
         run: |
