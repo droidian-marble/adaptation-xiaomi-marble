@@ -1,2 +1,4 @@
 usr/lib/droid-system-overlay/etc/init/* /usr/lib/droid-system-overlay/etc/init
 usr/lib/droid-vendor-overlay/etc/* /usr/lib/droid-vendor-overlay/etc
+usr/lib/droid-vendor-overlay/lib/* /usr/lib/droid-vendor-overlay/lib
+usr/lib/droid-vendor-overlay/lib/modules/* /usr/lib/droid-vendor-overlay/lib/modules

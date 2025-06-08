@@ -1,6 +1,7 @@
-adaptation-xiaomi-marble (1.0.0) UNRELEASED; urgency=medium
+adaptation-xiaomi-marble (1.0.1) UNRELEASED; urgency=medium
 
   [ Halhadus ]
+  * Added needed modules
   * Initial
 
  -- Halhadus <eneshakans45@proton.me>  Sun, 14 May 2025 01:42:20 +0000
