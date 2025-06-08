@@ -18,8 +18,6 @@ case "$1" in
 
     systemctl mask serial-getty@hvc0.service
     systemctl mask droidian-fpd
-    chcon u:object_r:vendor_file:s0 /usr/lib/droid-vendor-overlay/lib/modules/*
-    chown 0:0 /usr/lib/droid-vendor-overlay/lib/modules/*
     ;;
   *)
     echo "Unknown argument: $1" >&2
