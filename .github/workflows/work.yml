@@ -41,8 +41,8 @@ jobs:
         run: |
           mkdir -p /tmp/modules
           curl -L "https://github.com/droidian-marble/linux-droidian-marble-modules/releases/download/latest-modules/melt-modules.zip" | bsdtar -xvf- -C /tmp/modules
-          mkdir -p usr/lib/droid-vendor-overlay/lib/modules/
-          mv /tmp/modules/vendor_dlkm_modules/*.ko usr/lib/droid-vendor-overlay/lib/modules/
+          mkdir -p usr/lib/adaptation-xiaomi-marble/modules/
+          mv /tmp/modules/vendor_dlkm_modules/*.ko usr/lib/adaptation-xiaomi-marble/modules/
           
       - name: Build package
         run: |

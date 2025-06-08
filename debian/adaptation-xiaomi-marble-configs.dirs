@@ -11,6 +11,7 @@
 /usr/bin/droid
 /usr/share/glib-2.0/schemas
 /usr/lib/adaptation-xiaomi-marble
+/usr/lib/adaptation-xiaomi-marble/modules
 /usr/lib/adaptation-xiaomi-marble/sources.list.d
 /usr/lib/adaptation-xiaomi-marble/trusted.gpg.d
 /usr/lib/droidian/device

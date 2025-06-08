@@ -111,6 +111,14 @@ if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor_dlkm/etc/build.prop 2>/dev/null; then
     fi
 fi
 
+if [ ! -e /.modules_installed ]; then
+    mount -o remount,rw /vendor_dlkm
+    cp -rf /usr/lib/adaptation-xiaomi-marble/modules/*.ko /vendor_dlkm/lib/modules/ && touch /.modules_installed
+    chcon u:object_r:vendor_file:s0 /vendor_dlkm/lib/modules/*
+    chown 0:0 /vendor_dlkm/lib/modules/*
+    mount -o remount,ro /vendor_dlkm
+fi
+
 # Bind-mount /vendor if we should. Legacy devices do not have /vendor
 # on a separate partition and we should handle that.
 if [ -n "${BIND_MOUNT_PATH}" ] && mountpoint -q -- /vendor; then
