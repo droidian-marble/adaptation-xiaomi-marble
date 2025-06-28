@@ -49,10 +49,9 @@ if [ -n "${BIND_MOUNT_PATH}" ] && ! mountpoint -q -- "${BIND_MOUNT_PATH}"; then
     done
 fi
 
-if [ -e "/userdata/super.img" ]; then
+if [ -e "/dev/disk/by-partlabel/super" ]; then
     echo "mapping super partition"
-    losetup -r /dev/loop60 /userdata/super.img
-    dmsetup create --concise "$(parse-android-dynparts /dev/loop60)"
+    dmsetup create --concise "$(parse-android-dynparts /dev/disk/by-partlabel/super)"
 fi
 
 if [ ! -e "/vendor/build.prop" ]; then
@@ -76,7 +75,7 @@ fi
 
 if [ ! -e "/vendor_dlkm/etc/build.prop" ]; then
     echo "checking for vendor_dlkm mount point"
-    vendor_dlkm_images="/dev/mapper/dynpart-vendor_dlkm /dev/mapper/dynpart-vendor_dlkm${ab_slot_suffix} /dev/mapper/dynpart-vendor_dlkm_a /dev/mapper/dynpart-vendor_dlkm_b"
+    vendor_dlkm_images="/userdata/vendor_dlkm.img"
     for image in $vendor_dlkm_images; do
         if [ -e $image ]; then
             echo "mounting vendor_dlkm from $image"
@@ -93,30 +92,15 @@ if [ ! -e "/vendor_dlkm/etc/build.prop" ]; then
     done
 fi
 
-if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor/build.prop 2>/dev/null; then
-    if [ -e "/userdata/vendor.img" ]; then
-        mount /userdata/vendor.img -o ro /vendor
-    fi
-    if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor/build.prop 2>/dev/null; then
-        echo "Vendor partition not mounted or version is incorrect!"
-    fi
-fi
-
-if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor_dlkm/etc/build.prop 2>/dev/null; then
-    if [ -e "/userdata/vendor_dlkm.img" ]; then
-        mount /userdata/vendor_dlkm.img -o ro /vendor_dlkm
-    fi
-    if ! grep -qF "OS2.0.5.0.VMRCNXM" /vendor_dlkm/etc/build.prop 2>/dev/null; then
-        echo "Vendor_dlkm partition not mounted or version is incorrect!"
-    fi
-fi
-
-if [ ! -e /.modules_installed ]; then
-    mount -o remount,rw /vendor_dlkm
-    cp -rf /usr/lib/adaptation-xiaomi-marble/modules/*.ko /vendor_dlkm/lib/modules/ && touch /.modules_installed
-    chcon u:object_r:vendor_file:s0 /vendor_dlkm/lib/modules/*
-    chown 0:0 /vendor_dlkm/lib/modules/*
-    mount -o remount,ro /vendor_dlkm
+sys_vendor="/sys/firmware/devicetree/base/firmware/android/fstab/vendor"
+if [ -e $sys_vendor ] && ! mountpoint -q -- /vendor; then
+    label=$(cat $sys_vendor/dev | awk -F/ '{print $NF}')
+    path=$(find_partition_path $label)
+    [ ! -e "$path" ] && echo "Error vendor not found" && exit
+    type=$(cat $sys_vendor/type)
+    options=$(parse_mount_flags $(cat $sys_vendor/mnt_flags))
+    echo "mounting $path as /vendor"
+    mount $path /vendor -t $type -o $options
 fi
 
 # Bind-mount /vendor if we should. Legacy devices do not have /vendor
