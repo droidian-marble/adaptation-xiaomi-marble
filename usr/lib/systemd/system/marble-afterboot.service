@@ -4,7 +4,7 @@ After=phosh.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/adaptation-xiaomi-marble/afterboot.service
+ExecStart=/usr/lib/adaptation-xiaomi-marble/afterboot.sh
 
 [Install]
 WantedBy=multi-user.target
