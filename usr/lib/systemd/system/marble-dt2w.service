@@ -1,0 +1,11 @@
+[Unit]
+Description=Double tap to wake
+Requires=lxc@android.service
+After=phosh.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'echo state:enabled > /sys/devices/platform/goodix_ts.0/goodix_ts_double_tap'
+
+[Install]
+WantedBy=multi-user.target

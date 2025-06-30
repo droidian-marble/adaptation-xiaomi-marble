@@ -73,7 +73,7 @@ if [ ! -e "/vendor/build.prop" ]; then
     done
 fi
 
-if [ ! -e "/vendor_dlkm/etc/build.prop" ]; then
+if [ -e "/userdata/.dualboot" ]; then
     echo "checking for vendor_dlkm mount point"
     vendor_dlkm_images="/userdata/vendor_dlkm.img"
     for image in $vendor_dlkm_images; do
