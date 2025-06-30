@@ -5,3 +5,5 @@ if [ -f /userdata/.dualboot ]; then
 else
     mount --bind /usr/lib/adaptation-xiaomi-marble/mount-android.sh /usr/sbin/mount-android.sh
 fi
+
+mount --bind /usr/lib/adaptation-xiaomi-marble/usb-tethering /usr/bin/usb-tethering

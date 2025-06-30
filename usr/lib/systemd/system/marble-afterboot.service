@@ -1,0 +1,10 @@
+[Unit]
+Description=xiaomi-marble after boot service
+After=phosh.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/adaptation-xiaomi-marble/afterboot.service
+
+[Install]
+WantedBy=multi-user.target
