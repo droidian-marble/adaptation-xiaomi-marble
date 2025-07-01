@@ -19,7 +19,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Proximity: ✔
 
-* Vibration ?
+* Vibration ❌
 
 ### Cellular:
 
@@ -57,7 +57,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Hotspot: ✔
 
-* NFC: ?(didn't tried but must work)
+* NFC: ✔
 
 ### Misc:
 
@@ -69,7 +69,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Encryption: ❌
 
-* MTP: ?
+* MTP: ❌
 
 * Fast charging: Interesting but ✔
 
@@ -87,6 +87,8 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 Support Group: https://t.me/linuxonmarble
 
 Kernel: https://github.com/droidian-marble/linux-droidiam-marble-gki
+
+Installation Guide: https://blog.halhadus.rocks/blog/installation-guide-of-droidian-for-xiaomi-marble-poco-f5-redmi-note-12-turbo-new/
 
 Organization link: https://github.com/droidian-marble
 
