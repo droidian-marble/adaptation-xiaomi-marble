@@ -7,3 +7,8 @@ else
 fi
 
 mount --bind /usr/lib/adaptation-xiaomi-marble/usb-tethering /usr/bin/usb-tethering
+
+chmod 777 -R /dev/video*
+chmod 777 -R /dev/dma_heap/
+chmod 777 -R /dev/dri/renderD128
+chmod 777 -R /dev/*binder*
