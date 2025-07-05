@@ -19,7 +19,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Proximity: ✔
 
-* Vibration ❌
+* Vibration ✔
 
 ### Cellular:
 
