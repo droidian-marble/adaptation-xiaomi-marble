@@ -1,4 +1,0 @@
-service time_daemon vendor.time_daemon_HYBRIS_DISABLED
-    disabled
-    oneshot
-    override

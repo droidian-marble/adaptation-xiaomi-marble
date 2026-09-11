@@ -8,6 +8,6 @@
 /usr/lib/adaptation-xiaomi-marble
 /usr/lib/adaptation-xiaomi-marble/sources.list.d
 /usr/lib/droidian/device
-/etc/environment.d
+/usr/lib/environment.d
 /usr/lib/systemd/system
 /var/lib/bluetooth
