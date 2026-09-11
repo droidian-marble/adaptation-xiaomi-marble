@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart telephony after Phosh startup
+After=phosh.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/bin/systemctl restart ofono.service ModemManager.service
+
+[Install]
+WantedBy=multi-user.target

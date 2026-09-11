@@ -1,9 +1,12 @@
-adaptation-xiaomi-marble (2.0.0) UNRELEASED; urgency=medium
+adaptation-xiaomi-marble (2.0.1) UNRELEASED; urgency=medium
 
   [ Halhadus ]
+  * Readded environment file and created service for restart ofono and ModemManager after phosh started
+  * Fixed debian/rules and removed brightness service
+  * Improvements
   * Not from zero but somethings are changed
   * Removed modules
   * Added needed modules
   * Initial
 
- -- Halhadus <eneshakans45@proton.me>  Thu, 10 Sep 2026 16:49:04 +0300
+ -- Halhadus <eneshakans45@proton.me>  Fri, 11 Sep 2026 16:22:29 +0300

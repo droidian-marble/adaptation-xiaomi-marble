@@ -8,7 +8,6 @@
 /usr/lib/adaptation-xiaomi-marble
 /usr/lib/adaptation-xiaomi-marble/sources.list.d
 /usr/lib/droidian/device
+/usr/lib/environment.d
 /usr/lib/systemd/system
 /var/lib/bluetooth
-/etc/systemd/system/ofono.service.d
-/etc/systemd/system/ModemManager.service.d

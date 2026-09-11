@@ -4,4 +4,4 @@
 	dh $@
 
 override_dh_installsystemd:
-	dh_installsystemd -padaptation-xiaomi-marble-configs --no-start droidian-perf.service marble-dt2w.service
+	dh_installsystemd -padaptation-xiaomi-marble-configs --no-start droidian-perf.service marble-dt2w.service telephony-restart.service
