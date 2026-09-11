@@ -10,3 +10,5 @@
 /usr/lib/droidian/device
 /usr/lib/systemd/system
 /var/lib/bluetooth
+/etc/systemd/system/ofono.service.d
+/etc/systemd/system/ModemManager.service.d
