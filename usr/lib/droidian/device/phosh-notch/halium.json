@@ -1,0 +1,12 @@
+{
+  "name": "Xiaomi POCO F5",
+  "x-res": 1080,
+  "y-res": 2400,
+  "border-radius": 70,
+  "cutouts": [
+    {
+      "name": "notch",
+      "path": "M 540,0 H 512 V 94 H 568 V 0 H 540 Z"
+    }
+  ]
+}

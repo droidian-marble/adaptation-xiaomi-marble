@@ -1,0 +1,56 @@
+#!/bin/sh
+set -u
+
+IMAGE=/var/lib/lxc/android/android-rootfs.img
+OUTPUT=/usr/lib/droid-system-overlay/etc/init/hw/init.rc
+PATTERN='^[[:space:]]*exec - system system -- /system/bin/vdc keymaster earlyBootEnded[[:space:]]*$'
+
+MNT=
+TMP=
+mounted=0
+
+cleanup() {
+    [ -z "$TMP" ] || rm -f "$TMP"
+
+    if [ "$mounted" -eq 1 ]; then
+        umount "$MNT" || :
+    fi
+
+    [ -z "$MNT" ] || rmdir "$MNT" || :
+}
+
+fail() {
+    rm -f "$OUTPUT"
+    exit 0
+}
+
+trap cleanup EXIT
+trap 'exit 1' HUP INT TERM
+
+[ -f "$IMAGE" ] || fail
+
+MNT=$(mktemp -d) || fail
+
+mount -o loop,ro "$IMAGE" "$MNT" || fail
+mounted=1
+
+if [ -f "$MNT/system/etc/init/hw/init.rc" ]; then
+    SOURCE="$MNT/system/etc/init/hw/init.rc"
+elif [ -f "$MNT/etc/init/hw/init.rc" ]; then
+    SOURCE="$MNT/etc/init/hw/init.rc"
+else
+    fail
+fi
+
+COUNT=$(grep -Ec "$PATTERN" "$SOURCE" || true)
+[ "$COUNT" = "1" ] || fail
+
+mkdir -p "${OUTPUT%/*}" || fail
+TMP=$(mktemp "${OUTPUT}.XXXXXX") || fail
+
+sed "\|$PATTERN|d" "$SOURCE" > "$TMP" || fail
+chmod 0644 "$TMP" || fail
+mv -f "$TMP" "$OUTPUT" || fail
+
+TMP=
+exit 0

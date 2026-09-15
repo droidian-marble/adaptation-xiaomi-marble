@@ -2,12 +2,14 @@
 /etc/apt/sources.list.d
 /etc/systemd/system/phosh.service.d
 /etc/systemd/user/pulseaudio.service.d
+/etc/phosh
 /usr/bin
 /usr/bin/droid
 /usr/share/glib-2.0/schemas
 /usr/lib/adaptation-xiaomi-marble
 /usr/lib/adaptation-xiaomi-marble/sources.list.d
 /usr/lib/droidian/device
+/usr/lib/droidian/device/phosh-notch
 /usr/lib/environment.d
 /usr/lib/systemd/system
 /var/lib/bluetooth

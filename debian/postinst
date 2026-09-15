@@ -16,6 +16,13 @@ case "$1" in
 
     systemctl mask serial-getty@hvc0.service
     systemctl mask droidian-fpd
+
+    if [ -z "${2:-}" ]; then
+      /usr/lib/adaptation-xiaomi-marble/generate-android-init-overlay
+    fi
+    ;;
+  triggered)
+    /usr/lib/adaptation-xiaomi-marble/generate-android-init-overlay
     ;;
   *)
     echo "Unknown argument: $1" >&2
