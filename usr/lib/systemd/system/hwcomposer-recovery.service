@@ -1,0 +1,11 @@
+[Unit]
+Description=Recover Phosh on hwcomposer render failure
+After=phosh.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'timeout 10s journalctl -b -f -n 0 -t phoc --no-pager | grep -F -m1 "wlr_renderer_swap_buffers failed" && systemctl restart phosh.service || true'
+
+[Install]
+WantedBy=phosh.service

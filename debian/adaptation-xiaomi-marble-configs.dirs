@@ -1,6 +1,8 @@
 /etc/udev/rules.d
 /etc/apt/sources.list.d
-/etc/systemd/system/phosh.service.d
+/etc/systemd/system/lxc@android.service.d
+/etc/systemd/system/android-service@hwcomposer.service.d
+/etc/systemd/system/plymouth-quit.service.d
 /etc/systemd/user/pulseaudio.service.d
 /etc/phosh
 /usr/bin

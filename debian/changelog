@@ -1,3 +1,9 @@
+adaptation-xiaomi-marble (2.2.1) UNRELEASED; urgency=medium
+
+  * Improve boot reliability and recovery
+
+ -- Halhadus <eneshakans45@proton.me>  Wed, 16 Sep 2026 16:26:44 +0300
+
 adaptation-xiaomi-marble (2.2.0) UNRELEASED; urgency=medium
 
   [ Halhadus ]

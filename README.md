@@ -4,8 +4,8 @@
 
 ### Camera: 
 
-Takes photos but cannot record videos
-Update for that info: after start Waydroid, video capturing starts to work. Interesting.
+* Photo: ✔ (low quality, 16MP and limited by droidian-camera, libhybris need Camera2 support)
+* Video: ✔
 
 ### Sensors:
 
@@ -31,7 +31,7 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * Carrier info: ✔
 
-* Dual SIM: ❌
+* Dual SIM: ❌(working but oFono can get confused, disabled)
 
 * MMS: ✔
 
@@ -63,19 +63,19 @@ Update for that info: after start Waydroid, video capturing starts to work. Inte
 
 * SDcard: ✔
 
-* Waydroid: ✔(you must put images manually until officially added)
+* Waydroid: ✔
 
 * GPS: ✔
 
 * Encryption: ❌
 
-* MTP: ❌
+* MTP: ✔(but disabled for now)
 
 * Fast charging: Interesting but ✔
 
 ## Known bugs:
 
-* Pulseaudio (pulseaudio.service audiosystem-passthrough.service) and ofono (ofono.service ModemManager.service) sometimes not starts at boot and need restart. After that works great.
+* Pulseaudio (pulseaudio.service audiosystem-passthrough.service) and ofono (ofono.service ModemManager.service) sometimes not starts at boot and need restart. After that works great. Added temporary fixes for them.
 
 * DON'T TRY FINGERPRINT!
 
@@ -88,7 +88,7 @@ Support Group: https://t.me/linuxonmarble
 
 Kernel: https://github.com/droidian-marble/linux-droidiam-marble-gki
 
-Installation Guide: https://blog.halhadus.rocks/blog/installation-guide-of-droidian-for-xiaomi-marble-poco-f5-redmi-note-12-turbo-new/
+!!!OUTDATED!!! Installation Guide: https://blog.halhadus.rocks/blog/installation-guide-of-droidian-for-xiaomi-marble-poco-f5-redmi-note-12-turbo-new/
 
 Organization link: https://github.com/droidian-marble
 

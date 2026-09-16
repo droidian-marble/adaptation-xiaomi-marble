@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart USB tethering after Android container startup
+After=lxc@android.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 6
+ExecStart=/usr/bin/systemctl restart usb-tethering.service
+
+[Install]
+WantedBy=multi-user.target

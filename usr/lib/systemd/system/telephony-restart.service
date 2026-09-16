@@ -4,7 +4,7 @@ After=phosh.service
 
 [Service]
 Type=oneshot
-ExecStartPre=/usr/bin/sleep 5
+ExecStartPre=/usr/bin/sleep 6
 ExecStart=/usr/bin/systemctl restart ofono.service ModemManager.service
 
 [Install]

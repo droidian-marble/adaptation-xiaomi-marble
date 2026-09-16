@@ -1,0 +1,7 @@
+[Unit]
+Description=Activate Phosh virtual terminal
+After=phosh.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/chvt 7
