@@ -1,1 +1,1 @@
-deb [trusted=yes] https://halhadus.github.io/droidian-packages stable main
+deb [arch=arm64 trusted=yes] https://droidian-marble.github.io/build-system/ main main

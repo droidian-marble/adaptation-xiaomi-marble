@@ -1,1 +1,2 @@
 /usr/lib/adaptation-xiaomi-marble/sources.list.d/community-xiaomi-marble.list /etc/apt/sources.list.d/community-xiaomi-marble.list
+/usr/lib/adaptation-xiaomi-marble/preferences.d/community-xiaomi-marble.pref /etc/apt/preferences.d/community-xiaomi-marble.pref

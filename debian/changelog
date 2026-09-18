@@ -1,3 +1,9 @@
+adaptation-xiaomi-marble (3.2.1) UNRELEASED; urgency=medium
+
+  * Changed apt repo url
+
+ -- Halhadus <eneshakans45@proton.me>  Fri, 18 Sep 2026 15:53:19 +0300
+
 adaptation-xiaomi-marble (2.2.1) UNRELEASED; urgency=medium
 
   * Improve boot reliability and recovery
