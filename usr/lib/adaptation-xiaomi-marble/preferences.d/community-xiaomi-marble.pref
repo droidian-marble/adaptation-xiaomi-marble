@@ -1,3 +1,7 @@
 Package: *
-Pin: origin "droidian-marble.github.io"
+Pin: release a=main
 Pin-Priority: 1003
+
+Package: *
+Pin: release a=additional
+Pin-Priority: 1004
