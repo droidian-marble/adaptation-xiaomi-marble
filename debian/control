@@ -10,8 +10,13 @@ Vcs-Git: https://github.com/droidian-marble/adaptation-xiaomi-marble.git
 Package: adaptation-xiaomi-marble
 Architecture: all
 Depends: ${misc:Depends},
+         adaptation-hybris-api32-phone,
          adaptation-xiaomi-marble-configs,
-         adaptation-xiaomi-marble-android
+         adaptation-xiaomi-marble-android,
+         linux-bootimage-xiaomi-marble,
+         libdroid-hal-lights,
+         ofono-binder-plugin-ext-qti-aidl,
+         droidian-quirks-firefox-gpu
 Description: Xiaomi marble Droidian adaptation metapackage
  Device adaptation metapackage for Xiaomi marble.
 
