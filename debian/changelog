@@ -1,3 +1,9 @@
+adaptation-xiaomi-marble (3.2.5) UNRELEASED; urgency=medium
+
+  * Added MTP support
+
+ -- Halhadus <eneshakans45@proton.me>  Thu, 24 Sep 2026 23:36:39 +0300
+
 adaptation-xiaomi-marble (3.2.4) UNRELEASED; urgency=medium
 
   * Updated dependencies

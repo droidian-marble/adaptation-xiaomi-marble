@@ -69,7 +69,7 @@
 
 * Encryption: ❌
 
-* MTP: ✔(but disabled for now)
+* MTP: ✔
 
 * Fast charging: Interesting but ✔
 
